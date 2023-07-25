@@ -3,6 +3,7 @@ package it.epicode.be.godfather.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import it.epicode.be.godfather.OrderCommandRunner;
 import it.epicode.be.godfather.model.Drink;
@@ -17,10 +18,34 @@ import it.epicode.be.godfather.model.ToppingCheese;
 import it.epicode.be.godfather.model.ToppingHam;
 
 @Configuration
+@PropertySource("classpath:application.properties")
 public class MenuConfig {
-
-	@Value("${menu.cover.charge:0.0}")
+	@Value("${menu.cover.charge}")
 	private double coverCharge;
+
+	@Value("${pizza.margherita.price}")
+	private double pizzaMargheritaPrice;
+
+	@Value("${pizza.hawaiian.price}")
+	private double pizzaHawaiianPrice;
+
+	@Value("${pizza.salami.price}")
+	private double pizzaSalamiPrice;
+
+	@Value("${drink.lemonade.price}")
+	private double drinkLemonadePrice;
+
+	@Value("${topping.cheese.price}")
+	private double toppingCheesePrice;
+
+	@Value("${topping.ham.price}")
+	private double toppingHamPrice;
+
+	@Value("${franchise.mug.price}")
+	private double franchiseMugPrice;
+
+	@Value("${menu.cover.charge}")
+	private double coverCharge1;
 
 	@Bean
 	public Menu menu() {
@@ -64,6 +89,7 @@ public class MenuConfig {
 	}
 
 	@Bean
+
 	public OrderCommandRunner menuOrderCommandRunner() {
 		return new OrderCommandRunner();
 	}

@@ -1,10 +1,10 @@
-package EpicodeItjava4D2.myProject;
+package andrearuzittu.Epicodeitjava4D2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MyProjectApplicationTests {
+class EpicodeItJava4D2ApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,6 +1,7 @@
 package it.epicode.be.godfather;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 
 import it.epicode.be.godfather.config.MenuConfig;
 import it.epicode.be.godfather.model.Menu;
@@ -8,6 +9,7 @@ import it.epicode.be.godfather.model.PizzaFamilySize;
 import it.epicode.be.godfather.model.PizzaMargherita;
 import it.epicode.be.godfather.model.ToppingCheese;
 
+@Component
 public class GestioneMenu {
 
 	private Menu menu;
@@ -38,22 +40,19 @@ public class GestioneMenu {
 	public void testTopping() {
 
 		PizzaMargherita pizza = ctx.getBean(PizzaMargherita.class);
-		
-		
+
 		ToppingCheese topping1 = new ToppingCheese(pizza);
 
 		System.out.println(topping1.getName());
-		
+
 		ToppingCheese topping2 = new ToppingCheese(topping1);
 
 		System.out.println(topping2.getName());
-		
+
 		PizzaFamilySize toppingBig = new PizzaFamilySize(topping2);
 		System.out.println(toppingBig.getName());
 		System.out.println(toppingBig.getPrice());
 
-
-		
 	}
 
 }

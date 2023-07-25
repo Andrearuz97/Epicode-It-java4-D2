@@ -1,10 +1,10 @@
-package andrearuzittu.Epicodeitjava4D2;
+package it.epicode.be.godfather;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EpicodeItJava4D2ApplicationTests {
+class GodFatherPizzaApplicationTests {
 
 	@Test
 	void contextLoads() {
